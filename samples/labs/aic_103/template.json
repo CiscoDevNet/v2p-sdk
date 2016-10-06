@@ -1,0 +1,18 @@
+{
+  "name": "aic_103",
+  "version": "0.0.2",
+  "description": "aic 103 project",
+  "type":"aic_103",       
+  "scriptPath": "scripts",
+  "applications": {         
+    "nginx": {              
+      "start":"yes",        
+      "resourceSLA": {      
+        "minNode": 1,
+        "desiredNode": 3,
+        "maxNode": 10
+      },
+      "install": "install.sh"
+    }
+  }
+}

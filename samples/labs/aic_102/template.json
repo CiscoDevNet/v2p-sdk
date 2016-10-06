@@ -1,0 +1,16 @@
+{
+  "name": "aic_102",
+  "version": "0.0.1",
+  "description": "aic 102 project",
+  "type":"aic_102",       
+  "applications": {         
+    "nginx": {              
+      "start":"yes",        
+      "resourceSLA": {      
+        "minNode": 1,
+        "desiredNode": 3,
+        "maxNode": 10
+      }
+    }
+  }
+}
