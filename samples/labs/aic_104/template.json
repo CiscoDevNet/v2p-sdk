@@ -1,0 +1,38 @@
+{
+  "name": "aic_104",
+  "version": "0.0.2",
+  "description": "aic 104 project",
+  "type":"aic_104",       
+  "scriptPath": "scripts",
+  "configPath": "conf",
+  "applications": {         
+    "nginx": {              
+      "start":"yes",        
+      "resourceSLA": {      
+        "minNode": 1,
+        "desiredNode": 3,
+        "maxNode": 10
+      },
+      "install": "install.sh",
+      "postInstall":"post_install.sh",
+      "config": [
+        {
+          "name": "port",
+          "type": "Number",
+          "label": "Listen Port",
+          "description": "listen port by nginx",
+          "default": [80],
+          "constraints": [
+            {
+              "required": "true",
+              "displayOrder": 0
+            }
+          ]
+        }
+      ],
+      "configPath": {
+        "nginx": "/etc/nginx/conf.d/default.conf"
+      }
+    }
+  }
+}
