@@ -1,6 +1,6 @@
 {
   "name": "aic_104",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "aic 104 project",
   "type":"aic_104",       
   "scriptPath": "scripts",
