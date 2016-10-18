@@ -1,8 +1,8 @@
 {
-  "name": "mfc-101",
+  "name": "mfc-102",
   "version": "0.0.1",
-  "description": "sample mfc 101 workflow template",
-  "groupName": "mfc-101",
+  "description": "sample mfc 102 workflow template",
+  "groupName": "mfc-102",
   "mediaServiceEndpoints": [
     {
       "endpointTag": "ORIGIN_TAG_1",
