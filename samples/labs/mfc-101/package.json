@@ -1,0 +1,20 @@
+{
+  "name": "mfc-101",
+  "version": "0.0.1",
+  "description": "Sample Mediaflow Controller Project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "v2pc",
+    "mediaflow",
+    "controller"
+  ],
+  "v2pcPackageInfo": {
+    "vendorId": "v2pc_learning_lab",
+    "pkgType": "mfc",
+    "roles": []
+  },
+  "author": "qiwa",
+  "bundledDependencies": []
+}

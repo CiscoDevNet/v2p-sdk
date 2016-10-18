@@ -1,0 +1,29 @@
+{
+  "name": "mfc-101",
+  "version": "0.0.1",
+  "description": "sample mfc 101 workflow template",
+  "groupName": "mfc-101",
+  "mediaServiceEndpoints": [
+    {
+      "endpointTag": "ORIGIN_TAG_1",
+      "endpointType": "ORIGIN",
+      "allowedApplicationTypes": [{"name": "aic_104"}],
+      "properties": [
+      ]
+    },
+    {
+      "endpointTag": "CDN_TAG_2",
+      "endpointType": "CDN",
+      "allowedApplicationTypes": [{"name": "aic_203"}],
+      "properties": [
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "flowTag": "AM-JOIN-MFC201-TAG-1",
+      "sourceEndpointTag": "ORIGIN_TAG_1",
+      "targetEndpointTag": "CDN_TAG_2"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Swagger Nginx Location CRUD
+  description: A sample API that uses Nginx Location as an example to demonstrate features of V2PC in the swagger-2.0 specification
+  contact:
+    name: Leslie Qi Wang
+    email: qiwa@cisco.com
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+basePath: /api
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /locations:
+    get:
+      description: Returns all locations from the system that nginx can provide access
+      operationId: findLocations
+      produces:
+        - application/json
+        - application/xml
+        - text/xml
+        - text/html
+      responses:
+        '200':
+          description: location response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/location'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+    post:
+      description: Creates a new location in the system.
+      operationId: addLocation
+      produces:
+        - application/json
+      parameters:
+        - name: location
+          in: body
+          description: Location to add to the system
+          required: true
+          schema:
+            $ref: '#/definitions/newLocation'
+      responses:
+        '200':
+          description: location response
+          schema:
+            $ref: '#/definitions/location'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+  /locations/{id}:
+    get:
+      description: Returns a location based on a single ID
+      operationId: findLocationById
+      produces:
+        - application/json
+        - application/xml
+        - text/xml
+        - text/html
+      parameters:
+        - name: id
+          in: path
+          description: ID of location to fetch
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: location response
+          schema:
+            $ref: '#/definitions/location'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+    delete:
+      description: deletes a single location based on the ID supplied
+      operationId: deleteLocation
+      parameters:
+        - name: id
+          in: path
+          description: ID of location to delete
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: location deleted
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+definitions:
+  location:
+    type: object
+    required:
+      - id
+      - url
+      - localPath
+    properties:
+      id:
+        type: integer
+        format: int64
+      url:
+        type: string
+      localPath:
+        type: string
+  newLocation:
+    type: object
+    required:
+      - url
+    properties:
+      id:
+        type: integer
+        format: int64
+      url:
+        type: string
+      localPath:
+        type: string
+  errorModel:
+    type: object
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+
